@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+                                                        <h1> THE GREAT HUNT AND RACE </h1>
+                                                        <img src = "http://1.bp.blogspot.com/_Qju2Bta4v30/SlIzQkvmLFI/AAAAAAAAAEM/dq_aBtuXjkU/s400/rabbit-and-tortoise-thumb.jpg">
+
+<script>
+function Animal(name, speed, focus) {
+	this.name = name
+	this.speed = speed
+	this.focus = focus
+	this.position = 0
+	this.isFocused = function() {
+		return Math.floor(Math.random() * 10) < this.focus;
+}
+this.advance = function() {
+	if (this.isFocused()) {
+		this.position += this.speed
+	}
+}
+this.progressReport = function() {
+	return this.name + " is at: " + this.position
+}
+}
+
+
+var rabbit = new Animal(prompt("What is the rabbit's name"), Number(prompt("What is the rabbit's speed?")), Number(prompt("What is the rabbit's focus?")));
+var turtle = new Animal(prompt("What is the turtles's name"), Number(prompt("What is the turtle's speed?")), Number(prompt("What is the turtle's focus?")));
+var hunter = new Animal("The Hunter", 1, 1)
+var GameContinue = true
+var meters = 100;
+
+while (rabbit.position < meters && turtle.position < meters && GameContinue){
+	rabbit.advance();
+	turtle.advance();
+	hunter.advance();
+	alert(rabbit.progressReport() + " -- " + turtle.progressReport() + " -- " + hunter.progressReport());
+	if (hunter.position > rabbit.position || hunter.position > turtle.position) {
+		GameContinue = false;
+		alert("The hunter got caught one of the racers! OH THE HUMANITY...errr ANIMALITY???") 
+		}
+		if (rabbit.position > meters || turtle.position > meters) {
+			GameContinue = false;
+			alert("The race is over!")
+		}; 
+
+}
+
+
+</script>
+</html?

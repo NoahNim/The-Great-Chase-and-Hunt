@@ -1,0 +1,7 @@
+The game is a simple race between a rabbit and a turtle using input from the user to determine how fast and focused the rabbit and turtle are. There is also a Hunter bot who chases both animals, it's speed and focus is determined by Math.random()*10. If either the turtle or rabbit get past 100 meters, the game ends. If the hunter catches either, the game ends.
+
+Made by Noah Medoff
+With help from:
+Jonah Kirangi
+Hannah Won
+
